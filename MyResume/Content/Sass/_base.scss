@@ -1,0 +1,21 @@
+﻿.hide {
+    display: none !important;
+}
+
+.page-section{
+    &--outer{
+        width: 100%;
+    }
+
+    &--inner{
+        margin: 35px 15px;
+    }
+}
+
+.fa{
+    font-family: "FontAwesome";
+}
+
+.m-0{
+    margin: 0;
+}

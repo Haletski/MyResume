@@ -1,0 +1,39 @@
+﻿a, button {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+
+    &.download-link {
+        font-family: 'RalewayBold';
+        border: 2px solid $blue-color;
+        padding: 10px 15px;
+        background: $white-color;
+        color: $blue-color;
+        position: relative;
+        text-align: left;
+        border-radius: 30px;
+
+        @include breakpoint(320px){
+            width: 100%;
+        }
+
+        @include breakpoint(768px){
+            width: 170px;
+        }
+
+        &:after {
+            font-size: 1.33333333em;
+            font-family: 'FontAwesome';
+            content: "\f019";
+            position: absolute;
+            right: 15px;
+        }
+
+        &:hover{
+            background:$blue-color; 
+            color: $white-color;
+        }
+    }
+}

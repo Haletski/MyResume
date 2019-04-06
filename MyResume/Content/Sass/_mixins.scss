@@ -1,0 +1,11 @@
+﻿@mixin default-list-values(){
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin breakpoint($size){
+    @media (min-width: $size) {
+        @content;
+      }
+}

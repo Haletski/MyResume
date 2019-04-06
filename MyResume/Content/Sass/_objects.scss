@@ -1,0 +1,80 @@
+.progress-bar{
+    margin-bottom: 1em;
+    min-width: 200px;
+
+    p{
+        margin: 1em 0 0 0;
+    }
+
+    &-line{
+        height: 30px;
+        background: $light-grey;
+        width: 100%;
+
+        &-progress{
+            height: 30px;
+            background: $blue-color;
+        }
+    }
+}
+
+.timeline {
+    position: relative;
+    margin: 25px auto;
+
+    &::before {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        content: '';
+        position: absolute;
+        width: 3px;
+        left: 25px;
+        background-color: rgba($font-color, .2);
+        top: 0;
+        bottom: 0;
+    }
+
+    .timeline-content{
+        padding-left: 75px; 
+        position: relative;
+
+        &::before{
+            content: '';
+            top: 30px;
+            left: 15px;
+            z-index: 1;
+            position: absolute;
+            background: transparent;
+            height: 17px;
+            width: 17px;
+            border-radius: 50px;
+            border: 3px solid rgba($font-color, .4);
+            background: $white-color;
+        }
+
+        &-header{
+            font-family: "RalewayBold";
+            font-size: 1.3rem;
+            line-height: 2rem;
+            color: $dark-font-color;
+        }
+
+        &-subheader{
+            font-family: "RalewayBold";
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+            color: $dark-font-color;
+        }
+    }
+  }
+
+  .badge{
+      border: 1px solid $light-grey;
+      padding: 8px 15px;;
+      border-radius: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-family: "RobotoLight"
+  }
+
+  

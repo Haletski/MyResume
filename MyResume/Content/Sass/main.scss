@@ -1,0 +1,14 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'elements';
+@import 'buttons';
+
+@import 'base';
+
+@import 'objects';
+
+/*Third parties styles*/
+@import './ThirdParty/FontAwesome/fontawesome';
+
+@import './Pages/Home/home';

@@ -1,0 +1,98 @@
+.home-header{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint(376px){
+        justify-content: center;
+    }
+
+    @include breakpoint(768px){
+        justify-content: space-between;
+    }
+
+    .profile-section{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        &-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            @include breakpoint(320px){
+                align-items: center;
+                margin: 20px 0;
+                width: 100%;
+            }
+
+            @include breakpoint(768px){
+                margin: 20px 35px;
+                align-items: flex-start;
+                width: auto;
+            }
+        }
+    
+        .profile-img{
+            border-radius: 50px;
+            height: 140px;
+            width: auto;
+        }
+    }
+
+    .other-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+        &-item{
+            display: flex;
+            flex-wrap: nowrap;
+            margin: .5em 0;
+            font-size: 1.1rem;
+
+            i{
+                width: 30px;
+                text-align: center;
+                margin-left: 15px;
+                font-size: 1.2rem;
+                color: $blue-color;
+            }
+        }
+    }
+}
+
+.main-content{
+    display: flex;
+    flex-wrap: wrap;
+    &-left{
+        @include breakpoint(320px){
+            width: 100%;
+        }
+
+        @include breakpoint(768px){
+            width: 73%;
+        }
+        
+    }
+    &-right{
+        @include breakpoint(320px){
+            width: 100%;
+        }
+
+        @include breakpoint(768px){
+            width: 27%;
+        }
+
+        .section-wrapper{
+            margin-bottom: 2.5em;
+        }
+
+        .badges-wrapper{
+            margin-top: 2em;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
