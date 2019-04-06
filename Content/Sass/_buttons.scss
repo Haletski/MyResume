@@ -14,6 +14,7 @@
         position: relative;
         text-align: left;
         border-radius: 30px;
+        transition: all .3s ease-in-out;
 
         @include breakpoint(320px){
             width: 100%;
