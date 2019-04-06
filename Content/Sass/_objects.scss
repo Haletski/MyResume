@@ -34,11 +34,19 @@
         background-color: rgba($font-color, .2);
         top: 0;
         bottom: 0;
+
+        @include breakpoint-max(768px){
+            display: none;
+        }
     }
 
     .timeline-content{
         padding-left: 75px; 
         position: relative;
+
+        @include breakpoint-max(768px){
+            padding-left: 0; 
+        }
 
         &::before{
             content: '';
@@ -52,6 +60,10 @@
             border-radius: 50px;
             border: 3px solid rgba($font-color, .4);
             background: $white-color;
+
+            @include breakpoint-max(768px){
+                display: none;
+            }
         }
 
         &-header{

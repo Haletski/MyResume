@@ -9,3 +9,9 @@
         @content;
       }
 }
+
+@mixin breakpoint-max($size){
+    @media (max-width: $size) {
+        @content;
+      }
+}
