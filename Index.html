@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pavel Haletski CV</title>
-    <link rel="stylesheet" href="./Content/Css/styles.css"/>
-    <link rel="icon" type="image/jpeg" href="./Content/Images/logo.jpg">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="Content/dist/Css/styles.css">
+    <!-- endinject -->
+    <link rel="icon" type="image/jpeg" href="Content/dist/Assets/Images/logo.jpg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
@@ -14,11 +16,11 @@
         <div class="page-section--inner">
             <header class="home-header">
                 <div class="profile-section">
-                    <img class="profile-img" src="./Content/Images/logo.jpg">
+                    <img class="profile-img" src="Content/dist/Assets/Images/logo.jpg">
                     <div class="profile-section-text">
                         <div class="title big">pavel haletski</div>
                         <div class="placeholder">Sofware Engineer</div>
-                        <a class="download-link" href="./CVHaletski.pdf" download>Download CV</a>
+                        <a class="download-link" href="CVHaletski.pdf" download>Download CV</a>
                     </div>
                 </div>
                 <div class="other-section">
@@ -202,8 +204,10 @@
     </div>
     <div class="spinner-backdrop active"></div>
 
-    <script src="./Content/Scripts/main.js"></script>
-    
+    <!-- inject:js -->
+    <script src="Content/dist/Scripts/all.min.js"></script>
+    <!-- endinject -->
+
     <script>
         myresume.main.init();
     </script>
