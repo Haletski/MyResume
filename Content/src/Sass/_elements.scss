@@ -26,6 +26,12 @@ p {
     text-transform: uppercase;
     color: $dark-font-color;
 
+    i.fa{
+        font-size: 1.5rem;
+        color: $dark-font-color;
+        margin-right: 15px;
+    }
+
     &.big{
         text-transform: uppercase;
         font-size: 1.75rem;
