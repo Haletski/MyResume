@@ -5,7 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var gutil = require('gulp-util');
 var inject = require('gulp-inject');
 var uglify = require('gulp-uglify');
-var clean = require('gulp-clean');
+var del = require('del');
 
 var paths = {
     src: "./Content/src",
@@ -23,12 +23,12 @@ gulp.task('inject', function(){
 });
 
 gulp.task('watch', function(){
-    return gulp.watch( paths.src +'/Sass/**/*.scss', ['sass']);
+    return gulp.watch([paths.src +'/Sass/**/*.scss', paths.src + '/Scripts/**/*.js'], ['sass', 'scripts']);
 })
 
 gulp.task('assets', function(){
    return gulp.src(paths.src + '/Assets/**/*.*')
-    .pipe(gulp.dest(paths.dest + '/Assets'))
+    .pipe(gulp.dest(paths.dest + '/Assets/'))
 });
 
 gulp.task('scripts', function(){
@@ -40,7 +40,9 @@ gulp.task('scripts', function(){
 
 gulp.task('sass', function () {
     return gulp.src(paths.src + '/Sass/main.scss')
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({ 
+            outputStyle: 'compressed' 
+        }))
         .on('error', gutil.log)
         .pipe(concat('styles.css'))
         .pipe(autoprefixer({ browsers: ["last 2 versions"] }))
@@ -48,8 +50,9 @@ gulp.task('sass', function () {
 });
 
 gulp.task('clean', function(){
-    return gulp.src(paths.dest + '/**/*', {read: false})
-    .pipe(clean());
+    return del.sync([
+        paths.dest + '/**'
+      ]);
 });
 
-gulp.task('default', ['clean', 'sass', 'scripts', 'assets', 'inject', 'watch'])
+gulp.task('default', ['clean','assets', 'sass', 'scripts', 'inject', 'watch'])
