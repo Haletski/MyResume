@@ -1,22 +1,22 @@
-﻿var sass = require("gulp-sass");
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var autoprefixer = require('gulp-autoprefixer');
-var gutil = require('gulp-util');
-var inject = require('gulp-inject');
-var uglify = require('gulp-uglify');
-var del = require('del');
+﻿const gulp = require('gulp');
+const sass = require("gulp-sass");
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer');
+const inject = require('gulp-inject');
+const uglify = require('gulp-uglify');
+const del = require('del');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const cleanCSS = require('gulp-clean-css');
 
-var paths = {
+const paths = {
     src: "./Content/src",
     dest: "./Content/dist"
 };
 
 gulp.task('inject', function(){
-    var target = gulp.src('./index.html');
-    var sources = gulp.src([ paths.dest + '/Css/**/*.css', paths.dest + '/Scripts/**/*.js'], { read: false });
-
-    return target.pipe(inject(sources, {   
+    return gulp.src('./index.html')
+    .pipe(inject(gulp.src([ paths.dest + '/Css/**/*.css', paths.dest + '/Scripts/**/*.js'], { read: false }), {   
         relative: true
     }))
     .pipe(gulp.dest('./'));
@@ -28,24 +28,40 @@ gulp.task('watch', function(){
 
 gulp.task('assets', function(){
    return gulp.src(paths.src + '/Assets/**/*.*')
-    .pipe(gulp.dest(paths.dest + '/Assets/'))
+        .pipe(plumber({ errorHandler: function(err){
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+        }}))
+        .pipe(gulp.dest(paths.dest + '/Assets/'))
 });
 
 gulp.task('scripts', function(){
    return gulp.src(paths.src + '/Scripts/**/*.js')
-    .pipe(concat('all.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.dest + '/Scripts'))
+        .pipe(plumber({ errorHandler: function(err){
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+        }}))
+        .pipe(concat('all.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.dest + '/Scripts'))
 });
 
 gulp.task('sass', function () {
     return gulp.src(paths.src + '/Sass/main.scss')
-        .pipe(sass({ 
-            outputStyle: 'compressed' 
-        }))
-        .on('error', gutil.log)
+        .pipe(plumber({ errorHandler: function(err){
+            notify.onError({
+                title: "Gulp error in " + err.plugin,
+                message:  err.toString()
+            })(err);
+        }}))
+        .pipe(sass())
         .pipe(concat('styles.css'))
-        .pipe(autoprefixer({ browsers: ["last 2 versions"] }))
+        .pipe(autoprefixer({ browsers: ["last 5 versions"] }))
+        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest + '/Css'));
 });
 
