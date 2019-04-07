@@ -10,7 +10,7 @@ myresume.main = (function(){
                 var width = $(this).data('current-progress');
                 $(this).css('width', width + "%");
             });
-        }, 2000)
+        }, 2300)
     }
 
     return {

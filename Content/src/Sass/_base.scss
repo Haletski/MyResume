@@ -2,6 +2,29 @@
     display: none !important;
 }
 
+.container {
+    padding: 0 15px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include breakpoint(376px){
+        max-width: 540px;
+    }
+
+    @include breakpoint(768px){
+        max-width: 720px;
+    }
+
+    @include breakpoint(992px){
+        max-width: 960px;
+    }
+
+    @include breakpoint(1200px){
+        max-width: 1140px;
+    }
+}
+
 .page-section{
     &--outer{
         width: 100%;
@@ -12,7 +35,7 @@
     }
 }
 
-.fa{
+.fa {
     font-family: "FontAwesome";
 }
 

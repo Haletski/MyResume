@@ -31,6 +31,19 @@ p {
         font-size: 1.75rem;
     }
 
+    &.medium{
+        font-family: "RalewayBold";
+        font-size: 1.3rem;
+        text-transform: initial;
+    }
+
+    &.very-medium{
+        font-family: "RalewayBold";
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+        text-transform: initial;
+    }
+
     &.small{
         margin-top: 1em;
         font-size: 1.3rem;
@@ -45,27 +58,3 @@ p {
     margin: 0;
     margin-bottom: .5rem;
 }
-
-.container {
-    padding: 0 15px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    
-    @include breakpoint(376px){
-        max-width: 540px;
-    }
-
-    @include breakpoint(768px){
-        max-width: 720px;
-    }
-
-    @include breakpoint(992px){
-        max-width: 960px;
-    }
-
-    @include breakpoint(1200px){
-        max-width: 1140px;
-    }
-}
-
