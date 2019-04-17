@@ -1,14 +1,15 @@
 var myresume = window.myresume || {};
 
-myresume.main = (function(){
+myresume.main = (() => {
 
     function init(){
-        setTimeout(function(){
+        setTimeout(() => {
             $('.spinner-backdrop').removeClass('active');
 
-            $('.progress-bar-line-progress').each(function(){
-                var width = $(this).data('current-progress');
-                $(this).css('width', width + "%");
+            $('.progress-bar-line-progress').each((index, element) => {
+                var width = $(element).data('current-progress');
+
+                $(element).css('width', width + "%");
             });
         }, 2300)
     }
