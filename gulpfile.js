@@ -48,7 +48,6 @@ gulp.task('scripts', () => {
         }}))
         .pipe(babel())
         .pipe(concat('all.min.js'))
-        .pipe(uglify())
         .pipe(gulp.dest(paths.dest + '/Scripts'))
 });
 
