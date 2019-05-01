@@ -31,7 +31,7 @@ gulp.task('assets', () => {
    return gulp.src(paths.src + '/Assets/**/*.*')
         .pipe(plumber({ errorHandler: (err) => {
             notify.onError({
-                title: "Gulp error in " + err.plugin,
+                title: "Gulp ergror in " + err.plugin,
                 message:  err.toString()
             })(err);
         }}))
@@ -46,8 +46,11 @@ gulp.task('scripts', () => {
                 message:  err.toString()
             })(err);
         }}))
-        .pipe(babel())
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
         .pipe(concat('all.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(paths.dest + '/Scripts'))
 });
 
