@@ -7,6 +7,10 @@ body,html{
     padding: 0;
     font-family: "RobotoRegular";
     color: $font-color;
+
+    &.active{
+        overflow-y: hidden;
+    }
 }
 
 ul {

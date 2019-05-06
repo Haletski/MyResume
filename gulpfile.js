@@ -75,4 +75,4 @@ gulp.task('clean', () => {
       ]);
 });
 
-gulp.task('default', ['clean','assets', 'sass', 'scripts', 'inject', 'watch'])
+gulp.task('default', ['clean','assets', 'sass', 'scripts', 'inject'])
