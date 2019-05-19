@@ -14,6 +14,7 @@
         position: relative;
         text-align: left;
         border-radius: 30px;
+        bottom: 0;
         transition: all .3s ease-in-out;
 
         @include breakpoint(320px){
@@ -33,8 +34,10 @@
         }
 
         &:hover{
+            bottom: 4px;
             background:$blue-color; 
             color: $white-color;
+            box-shadow: 0 7px 10px rgba($blue-color, .6);
         }
     }
 }
