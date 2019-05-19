@@ -65,7 +65,8 @@
 
 .main-content{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+
     &-left{
         @include breakpoint(320px){
             width: 100%;
@@ -76,6 +77,7 @@
         }
         
     }
+    
     &-right{
         @include breakpoint(320px){
             width: 100%;
